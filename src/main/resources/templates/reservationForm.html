@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="all" href="/css/index.css" th:href="@{/css/index.css}">
+<meta charset="ISO-8859-1">
+<title>Reservation Form</title>
+</head>
+<body>
+	<h1>Reservation Form</h1><br>
+	<form action="" method="post">
+		<label>Name of the Client<input type="text" name="reservationClient"></label>
+		<label>Name of the Employee: <input type="text" name="reservationEmployee"></label>
+		<label>Date of checkIn: <input type="date" name="checkIn"></label>
+		<label>Date of checkOut: <input type="date" name="checkOut"></label>
+		<button type="submit">MAKE RESERVATION</button>
+	</form>
+	<p th:text="${message}"></p>
+</body>
+</html>

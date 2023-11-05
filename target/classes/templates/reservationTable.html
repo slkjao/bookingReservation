@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="all" href="/css/index.css" th:href="@{/css/index.css}">
+<meta charset="ISO-8859-1">
+<title>Reservation Table</title>
+</head>
+<body>
+	<h1>Reservation Table</h1><br>
+	<table>
+		<thead>
+			<tr>
+				<td  th:each="header: ${headers}" th:text="${header}"></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="booking:${bookings}">
+				<td th:text="${booking.getId}"/>
+				<td th:text="${booking.getReservationClient}"/>
+				<td th:text="${booking.getReservationEmployee}"/>
+				<td th:text="${#temporals.format(booking.getCheckIn, 'dd/MM/yyyy')}"/>	
+				<td th:text="${#temporals.format(booking.getCheckOut, 'dd/MM/yyyy')}"/>
+				<td class="action">
+					<a th:href="@{form/{id}(id=${booking.getId})}">Edit</a>
+					<a>Delete</a>
+				</td>
+			</tr>
+		</tbody>
+		
+	</table>
+</body>
+</html>
